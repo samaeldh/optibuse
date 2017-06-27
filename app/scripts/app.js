@@ -17,19 +17,25 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
+      .when('/home', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/buses', {
+        templateUrl: 'views/buses.html',
+        controller: 'BusesCtrl',
+        controllerAs: 'buses'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
+
+      // use the HTML5 History API
+      $locationProvider.html5Mode({
+        enabled: true,
+        rewriteLinks: true
+    });
   });

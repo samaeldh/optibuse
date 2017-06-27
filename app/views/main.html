@@ -1,23 +1,69 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form class="form-horizontal">
+              <div ng-repeat="critere in criteres">
+                <div class="form-group">
+                  <label for="critere{{$index + 1}}" class="col-sm-4 control-label">{{ critere.nom }}*</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" name="critere{{$index + 1}}" id="critere{{$index + 1}}" ng-model="selectedItem" ng-change="update(selectedItem, '{{$index + 1}}')">
+                        <option value="" selected="selected">Selectionnez un critère</option>
+                        <option ng-repeat="c in critere.critere" value="{{ c.id }}">{{ c.label | capitalize }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <p style="text-align: left;"><strong>*</strong> <em>Tous les critères doivent être complétés</em></p>
+              <div id="recherche-center" style="text-align: center;">
+                <button type="submit" class="btn btn-lg btn-success" ng-disabled="activeBtnRecherche" ng-click="afficheResultat()" ng-hide="viewResultat">Lancer la recherche&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-ok"></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+  <div class="row" ng-show="viewResultat">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3 class="vertopti" style="text-align: center;">Résultats de votre recherche</h3>
+                <div ng-repeat="r in resultat">
+                  <table class="table table-condensed">
+                      <tbody>
+                          <tr>
+                            <td>Hauteur de pulverisation</td>
+                            <td>Note {{ r.noteid_hauteur_pulve }}/3</td>
+                            <td><div id="moncercle{{ r.noteid_hauteur_pulve }}"></div></td>
+                          </tr>
+                          <tr>
+                            <td>Temperature de l'air</td>
+                            <td>Note {{ r.noteid_temperature }}/3</td>
+                            <td><div id="moncercle{{ r.noteid_temperature }}"></div></td>
+                          </tr>
+                          <tr>
+                            <td>Hygrométrie</td>
+                            <td>Note {{ r.noteid_hygrometrie }}/3</td>
+                            <td><div id="moncercle{{ r.noteid_hygrometrie }}"></div></td>
+                          </tr>
+                          <tr>
+                            <td>Type de sol</td>
+                            <td>Note {{ r.noteid_type_sol }}/3</td>
+                            <td><div id="moncercle{{ r.noteid_type_sol }}"></div></td>
+                          </tr>
+                          <tr>
+                            <td>Vitesse du vent</td>
+                            <td>Note {{ r.noteid_force_vent }}/3</td>
+                            <td><div id="moncercle{{ r.noteid_force_vent }}"></div></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <h1 style="color:green;">Note globale {{ r.note_globale }} / 42</h1>
+                  <h5>ATTENTION : conseil valable qu'en l'absence de point rouge ci-dessus</h5>
+                </div>
+            </div>
+        </div>
+  </div>
