@@ -22,30 +22,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="jumbotron" style="text-align: center; padding-top:1em; padding-bottom:1em;">
-        <p class="lead">
-          <img src="images/logo-uneal.png" alt="Logo UNEAL"><br>
-        </p>
-        <h2 class="vertopti">OptiBuse : pulvérisation, le choix idéal</h2>
-      </div>
-    </div>
 
-    <div class="container">
-      <nav class="navbar navbar-inverse">
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li> <a href="/home" class="active">Critères de pulvérisation</a> </li>
-
-            <li> <a href="/buses">Choix des buses</a> </li>
+            <li> <a href="/home" class="active" style="font-size: 1.1em;color: #fff;">Conditions d’application</a> </li>
+            <li> <a href="/buses" style="font-size: 1.1em;color: #fff;">Réglages de pulvérisation</a> </li>
           </ul>
         </div>
       </nav>
-    </div>
 
-    <div class="container">
-            <div ng-view=""></div>
-    </div>
+    <div ng-view=""></div>
 
     <div class="footer">
       <div class="container">
@@ -71,6 +59,8 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/gauge.min.js"></script>
+        <script src="scripts/scripts.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>
         <script src="scripts/controllers/main.js"></script>

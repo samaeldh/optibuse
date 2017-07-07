@@ -1,4 +1,15 @@
+  <div class="jumbotron">
+    <div class="container">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-left">
+              <img src="images/logo-uneal.png" alt="Logo UNEAL" vspace="10" class="jumbotronwidth" class="img-responsive">
+              </div>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <h2 class="vertopti" style="padding-top:0.9em;">Opti' Pulvé : pulvérisation, l'application idéale</h2>
+              </div>
+      </div>
+    </div>
 
+<div class="container">
   <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
@@ -30,7 +41,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h3 class="vertopti" style="text-align: center;">Résultats de votre recherche</h3>
+                <h3 class="vertopti" style="text-align: center;">Résultats</h3>
                 <div ng-repeat="r in resultat">
                   <table class="table table-condensed">
                       <tbody>
@@ -61,9 +72,14 @@
                           </tr>
                       </tbody>
                   </table>
-                  <h1 style="color:green;">Note globale {{ r.note_globale }} / 42</h1>
-                  <h5>ATTENTION : conseil valable qu'en l'absence de point rouge ci-dessus</h5>
+                  <h1 style="color:green;">Conditions d'application</h1>
+                  <h5>ATTENTION : conseil valable qu'en l'absence de point rouge ci-dessus, le type de sol n'est pas à prendre en compte à l'exception de l'application "Herbicide racinaire"</h5>
                 </div>
+                <canvas id="jauge" width="300" height="150">
+                </canvas>
+                <canvas id="legendJauge" width="300" height="150">
+                </canvas>
             </div>
         </div>
   </div>
+</div>

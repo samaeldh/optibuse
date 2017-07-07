@@ -1,3 +1,13 @@
+<div class="jumbotron">
+    <div class="container">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-left">
+              <img src="images/logo-uneal.png" alt="Logo UNEAL" vspace="10" class="jumbotronwidth" class="img-responsive">
+              </div>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <h2 class="vertopti" style="padding-top:0.9em;">Opti' Buse : pulvérisation, le choix idéal</h2>
+              </div>
+      </div>
+    </div>
 
   <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -8,9 +18,9 @@
                 <label for="vitesse" class="col-sm-2 control-label">Vitesse (en km/h)* </label>
                 <div class="col-sm-7">
                   <input ng-model="buses.Vitesse"
-                          ng-keypress="getResultat()"
+                          ng-change="getResultat()"
                          type="number"
-                         step="0.1"
+                         step="1"
                          min="0"
                          max="50"
                          ng-init="buses.Vitesse = 10"
@@ -23,9 +33,9 @@
                 <label for="quantite" class="col-sm-2 control-label">Volume de bouillie* </label>
                 <div class="col-sm-7">
                   <input ng-model="buses.Quantite"
-                        ng-keypress="getResultat()"
+                        ng-change="getResultat()"
                          type="number"
-                         step="0.1"
+                         step="1"
                          min="50"
                          max="200"
                          ng-init="buses.Quantite = 150"
@@ -62,9 +72,9 @@
                 </div>
               </div>
               <p style="text-align: left;"><strong>*</strong> <em>Tous les critères doivent être complétés</em></p>
-              <div id="recherche-center" style="text-align: center;">
+              <!--<div id="recherche-center" style="text-align: center;">
                 <button type="submit" class="btn btn-lg btn-success" ng-disabled="activeBtnRecherche" ng-click="getResultat()" >Lancer la recherche&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-ok"></button>
-              </div>
+              </div>-->
             </form>
           </div>
         </div>
@@ -84,7 +94,7 @@
                         <td>Calibre</td>
                         <td>Pression Min</td>
                         <td>Pression Max</td>
-                        <td>Pression</td>
+                        <td>Pression calculée avec votre vitesse et volume</td>
                         <td>Commentaire</td>
                         <td></td>
                       </tr>
@@ -94,10 +104,10 @@
                             <td>{{ r.calibre }}</td>
                             <td>{{ r.pMini }}</td>
                             <td>{{ r.pMaxi }}</td>
-                            <td>{{ r.resultatCalcul }}</td>
+                            <td><strong>{{ r.resultatCalcul }}</strong></td>
                             <td>
-                              <div ng-if="r.comment == 'fort'">Débit trop élevé</div>
-                              <div ng-if="r.comment == 'faible'">Débit trop faible</div>
+                              <div ng-if="r.comment == 'fort'">Risque fort de dérive</div>
+                              <div ng-if="r.comment == 'faible'">Mauvaise répartition de l’application</div>
                               <div ng-if="r.comment == 'ok'">Choix conseillé</div>
                             </td>
                             <td><div id="moncercle{{ r.comment }}"></div></td>

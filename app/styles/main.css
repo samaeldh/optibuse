@@ -42,3 +42,13 @@
   height:20px;
   border:2px solid #8B0000;
 }
+
+.jumbotron {
+  height: 12em ;
+}
+
+.jumbotronwidth
+{
+    max-width:100%;
+    text-align: right;
+}
