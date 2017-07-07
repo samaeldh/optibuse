@@ -19,18 +19,18 @@ angular
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/home', {
+      .when('/pulve', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/buses', {
+      .when('/buse', {
         templateUrl: 'views/buses.html',
         controller: 'BusesCtrl',
         controllerAs: 'buses'
       })
       .otherwise({
-        redirectTo: '/home'
+        redirectTo: '/pulve'
       });
 
       // use the HTML5 History API
