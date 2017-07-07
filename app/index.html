@@ -24,7 +24,7 @@
     <!-- Add your site or application content here -->
 
 
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <!--<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li> <a href="/pulve" class="active" style="font-size: 1.1em;color: #fff;">Conditions d’application</a> </li>
@@ -32,16 +32,40 @@
             <li> <a href="#" style="font-size: 1.1em;color: #fff;">Prévisions météo</a> </li>
           </ul>
         </div>
-      </nav>
+      </nav>-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+          <a class="navbar-brand page-title" href="/" data-toggle="collapse" data-target="#navbar" >Opti' Pulvé</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/pulve" data-toggle="collapse" data-target="#navbar" >Conditions d’application</a></li>
+              <li><a href="/buse" data-toggle="collapse" data-target="#navbar" >Réglages de pulvérisation</a></li>
+              <li><a href="https://www.syngenta.fr/servicespro/meteo-agricole/comparateur-meteo">Prévisions météo</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
 
     <div class="jumbotron">
         <div class="container">
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-left">
-              <img src="images/logo-uneal.png" alt="Logo UNEAL" vspace="10" class="jumbotronwidth" class="img-responsive">
-              </div>
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <h2 class="vertopti" style="padding-top:0.9em;">Opti' Pulvé : pulvérisation, l'application idéale</h2>
-              </div>
+            <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4 pull-left">
+                <img src="images/logo-uneal.png" alt="Logo UNEAL" vspace="20" class="jumbotronwidth" class="img-responsive">
+            </div>
+            <div class="hidden-xs hidden-sm col-md-8 col-lg-8">
+                <h2 class="vertopti" style="padding-top:0.9em;">Opti' Pulvé : pulvérisation, l'application idéale</h2>
+            </div>
+            <div class="col-xs-7 col-sm-7 hidden-md hidden-lg">
+                <h2 class="vertopti" style="padding-top:0.8em;font-size: 1.2em;">Opti' Pulvé : pulvérisation, l'application idéale</h2>
+            </div>
         </div>
     </div>
     <div class="container">

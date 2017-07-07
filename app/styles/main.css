@@ -44,11 +44,25 @@
 }
 
 .jumbotron {
-  height: 12em ;
+  height: 10.5em ;
 }
 
 .jumbotronwidth
 {
     max-width:100%;
     text-align: right;
+}
+
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    height: 12em ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  td.masqueTab {
+    display:none;
+  }
 }

@@ -39,7 +39,7 @@ angular.module('optibuseApp')
 
     $scope.getResultat = function() {
         if ( $scope.buses.Modele ) {
-            BusesService.getBusesResult($scope.buses.Modele.id,$scope.buses.Vitesse,$scope.buses.Quantite ).then(function (response) {
+            BusesService.getBusesResult($scope.buses.Modele.id, $scope.buses.Vitesse, $scope.buses.Quantite ).then(function (response) {
                 $scope.resultat = response.data.result;
                 $scope.activeBtnRecherche = false;
                 $scope.viewResultat = true;

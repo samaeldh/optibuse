@@ -21,5 +21,3 @@ var opts = {
       {strokeStyle: "#30B32D", min: 40, max: 60} // Green
   ],
 };
-
-
